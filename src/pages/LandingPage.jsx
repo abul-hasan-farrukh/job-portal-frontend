@@ -1,4 +1,4 @@
-﻿import Navbar from "../components/Navbar"
+﻿import PublicNavbar from "../components/PublicNavbar"
 import Hero from "../components/Hero"
 import HowItWorks from "../components/HowItWorks"
 import Features from "../components/Features"
@@ -12,7 +12,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
-      <Navbar />
+      <PublicNavbar />
 
       {/* Main Content */}
       <main>
