@@ -18,43 +18,68 @@ export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-white">
 
-      {/* Recruiter Demo Credentials Ticker */}
-<div className="relative z-20 overflow-hidden border-y border-indigo-100 bg-indigo-50/80 py-3">
-  <div className="flex items-center">
-    <div className="z-10 shrink-0 bg-indigo-50 px-4 text-xs font-bold uppercase tracking-wider text-[#080D4D] sm:px-6">
-      For Recruiter:
-    </div>
-
-    <div className="min-w-0 flex-1 overflow-hidden">
-      <div className="animate-credentials-ticker flex w-max items-center whitespace-nowrap text-sm text-slate-700">
-        {[1, 2].map((item) => (
-          <div key={item} className="flex shrink-0 items-center">
-            <span className="mx-5">
-              <strong className="text-[#080D4D]">Employer:</strong>{" "}
-              hasan@gmail.com / 12345678
-            </span>
-
-            <span className="text-indigo-300">•</span>
-
-            <span className="mx-5">
-              <strong className="text-[#080D4D]">Job Seeker:</strong>{" "}
-              suresh@gmail.com / Suresh123
-            </span>
-
-            <span className="text-indigo-300">•</span>
-
-            <span className="mx-5">
-              <strong className="text-[#080D4D]">Admin:</strong>{" "}
-              aimbitious@gmail.com / adminpassword
-            </span>
-
-            <span className="mx-5 text-indigo-300">•</span>
+            {/* Recruiter Demo Credentials Ticker */}
+      <div className="relative z-20 overflow-hidden border-y border-indigo-100 bg-indigo-50/80 py-3">
+        <div className="flex items-center">
+          <div className="z-10 shrink-0 bg-indigo-50 px-4 text-xs font-bold uppercase tracking-wider text-[#080D4D] sm:px-6">
+            For Recruiter:
           </div>
-        ))}
+
+          <div className="min-w-0 flex-1 overflow-hidden">
+            <div className="animate-credentials-ticker flex w-max items-center whitespace-nowrap text-sm text-slate-700">
+              {[1, 2].map((item) => (
+                <div key={item} className="flex shrink-0 items-center">
+                  <span className="mx-5">
+                    <strong className="text-[#080D4D]">Employer:</strong>{" "}
+                    hasan@gmail.com / 12345678
+                  </span>
+
+                  <span className="text-indigo-300">•</span>
+
+                  <span className="mx-5">
+                    <strong className="text-[#080D4D]">Job Seeker:</strong>{" "}
+                    suresh@gmail.com / Suresh123
+                  </span>
+
+                  <span className="text-indigo-300">•</span>
+
+                  <span className="mx-5">
+                    <strong className="text-[#080D4D]">Admin:</strong>{" "}
+                    aimbitious@gmail.com / adminpassword
+                  </span>
+
+                  <span className="mx-5 text-indigo-300">•</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+
+      {/* Backend Status Ticker */}
+      <div className="relative z-20 overflow-hidden border-b border-amber-200 bg-amber-50 py-3">
+        <div className="flex items-center">
+          <div className="z-10 shrink-0 bg-amber-50 px-4 text-xs font-bold uppercase tracking-wider text-amber-800 sm:px-6">
+            Notice:
+          </div>
+
+          <div className="min-w-0 flex-1 overflow-hidden">
+            <div className="animate-credentials-ticker flex w-max items-center whitespace-nowrap text-sm text-amber-900">
+              {[1, 2].map((item) => (
+                <div key={item} className="flex shrink-0 items-center">
+                  <span className="mx-5">
+                    <strong>Backend Status:</strong>{" "}
+                    Due to some issues in my Oracle Cloud Account, backend is
+                    not working. I am trying to fix it.
+                  </span>
+
+                  <span className="mx-5 text-amber-500">•</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
