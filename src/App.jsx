@@ -1,10 +1,11 @@
-﻿import {
+import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 
 // Auth Components
 import AppBootstrap from "./components/auth/AppBootstrap";
@@ -80,6 +81,7 @@ function App() {
     <Router>
       <AppBootstrap>
         <Toaster position="top-right" richColors />
+        <Analytics />
         <Routes>
           {/* Public Routes - Accessible to everyone */}
           <Route path="/" element={<LandingPage />} />
