@@ -66,7 +66,6 @@ import { fetchCurrentUser } from "./store/user/userThunk";
 import { useDispatch } from "react-redux";
 import AIScreening from "./pages/employer/AiScreening/AIScreening";
 import ApplicationDetail from "./pages/employer/Applications/ApplicationDetail";
-import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const dispatch = useDispatch();
