@@ -31,7 +31,7 @@ export default function Hero() {
                 <div key={item} className="flex shrink-0 items-center">
                   <span className="mx-5">
                     <strong className="text-[#080D4D]">Employer:</strong>{" "}
-                    hasan@gmail.com / 12345678
+                    hasan@gmail.com / Hasan123
                   </span>
 
                   <span className="text-indigo-300">•</span>
