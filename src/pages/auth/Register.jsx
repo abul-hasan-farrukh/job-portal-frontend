@@ -146,11 +146,11 @@ export default function Register() {
             aria-label="Aimbitious home"
             className="relative z-10 flex w-fit items-center"
           >
-            <img
+            {/* <img
               src="/logo.png"
               alt="Aimbitious - AI Powered Job Portal"
               className="h-20 w-auto object-contain"
-            />
+            /> */}
           </Link>
 
           {/* Hero Content */}
