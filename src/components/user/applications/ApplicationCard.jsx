@@ -26,7 +26,7 @@ const JOB_TYPE_LABEL = {
   FULL_TIME: "Full-time", PART_TIME: "Part-time", CONTRACT: "Contract",
   INTERNSHIP: "Internship", FREELANCE: "Freelance", REMOTE: "Remote",
 }
-const WORK_MODE_LABEL = { REMOTE: "Remote", HYBRID: "Hybrid", ON_SITE: "On-site" }
+const WORK_MODE_LABEL = { REMOTE: "Remote", HYBRID: "Hybrid", ONSITE: "On-site" }
 
 function timeAgo(iso) {
   if (!iso) return ""
