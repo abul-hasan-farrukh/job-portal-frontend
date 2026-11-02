@@ -21,7 +21,7 @@ const JOB_TYPES = [
 const WORK_MODES = [
   { value: "REMOTE",  label: "Remote" },
   { value: "HYBRID",  label: "Hybrid" },
-  { value: "ON_SITE", label: "On-site" },
+  { value: "ONSITE", label: "On-site" },
 ]
 
 const EXP_LEVELS = [
