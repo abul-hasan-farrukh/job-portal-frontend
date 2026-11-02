@@ -25,7 +25,7 @@ import MultiSelect from "./MultiSelect"
 // ── Enum constants ─────────────────────────────────────────────────────────────
 
 const JOB_TYPES        = ["FULL_TIME", "PART_TIME", "CONTRACT", "INTERNSHIP", "FREELANCE", "REMOTE"]
-const WORK_MODES       = ["REMOTE", "HYBRID", "ON_SITE"]
+const WORK_MODES       = ["REMOTE", "HYBRID", "ONSITE"]
 const EXP_LEVELS       = ["ENTRY_LEVEL", "JUNIOR", "MID_LEVEL", "SENIOR_LEVEL", "LEAD", "EXECUTIVE"]
 const SALARY_PERIODS   = ["HOURLY", "DAILY", "WEEKLY", "MONTHLY", "YEARLY"]
 const CURRENCIES       = ["USD", "INR", "EUR", "GBP", "CAD", "AUD", "SGD"]
