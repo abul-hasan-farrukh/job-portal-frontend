@@ -60,7 +60,7 @@ const JOB_TYPE_STYLE = {
 const WORK_MODE_STYLE = {
   REMOTE:  "bg-emerald-50 text-emerald-700 border-emerald-200",
   HYBRID:  "bg-amber-50 text-amber-700 border-amber-200",
-  ON_SITE: "bg-slate-100 text-slate-600 border-slate-200",
+  ONSITE: "bg-slate-100 text-slate-600 border-slate-200",
 }
 
 // ── Component ─────────────────────────────────────────────────────────────────
