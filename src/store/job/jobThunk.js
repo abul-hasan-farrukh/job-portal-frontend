@@ -116,10 +116,16 @@ export const fetchAllJobsAdmin = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await api.get("/api/jobs/admin")
-      console.log("jobs",job)
+
+      console.log("Admin jobs:", data)
+
       return data
     } catch (err) {
-      return rejectWithValue(err.response?.data?.message || "Failed to fetch jobs")
+      console.error("Fetch admin jobs error:", err)
+
+      return rejectWithValue(
+        err.response?.data?.message || "Failed to fetch jobs"
+      )
     }
   }
 )
