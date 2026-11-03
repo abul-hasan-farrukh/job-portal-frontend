@@ -62,9 +62,16 @@ export default function ApplicationCard({ app, onWithdraw }) {
   const myPipelineIdx = PIPELINE.indexOf(app.status)
   const canWithdraw = !["REJECTED", "WITHDRAWN", "HIRED"].includes(app.status)
 
-  const job = app.job
+  const job = app?.job
   const company = app?.company
-  const jobTitle = job?.title ?? app.jobTitle ?? `Job #${app.jobId}`
+
+// Support both possible API response structures
+const jobId = app?.jobId ?? job?.id
+
+const jobTitle =
+  job?.title ??
+  app?.jobTitle ??
+  (jobId ? `Job #${jobId}` : "Job details unavailable")
   const location = job ? [job.city, job.country].filter(Boolean).join(", ") : null
   const salary = fmtSalary(job)
 
@@ -91,12 +98,18 @@ export default function ApplicationCard({ app, onWithdraw }) {
             {/* Row 1: Title + status badge */}
             <div className="flex items-start justify-between gap-3 mb-1">
               <div className="min-w-0">
-                <Link
-                  to={`/jobs/${app.jobId}`}
-                  className="font-semibold text-slate-900 hover:text-primary transition-colors line-clamp-1"
-                >
-                  {jobTitle}
-                </Link>
+                {jobId ? (
+  <Link
+    to={`/jobs/${jobId}`}
+    className="font-semibold text-slate-900 hover:text-primary transition-colors line-clamp-1"
+  >
+    {jobTitle}
+  </Link>
+) : (
+  <span className="font-semibold text-slate-500 line-clamp-1">
+    {jobTitle}
+  </span>
+)}
                 {company && (
                   <div className="flex items-center gap-1 mt-0.5">
                     <span className="text-xs text-slate-500 font-medium">{company.name}</span>
@@ -176,12 +189,19 @@ export default function ApplicationCard({ app, onWithdraw }) {
               </div>
 
               <div className="flex items-center gap-1">
-                <Button variant="ghost" size="sm" className="text-xs h-7 px-2" asChild>
-                  <Link to={`/jobs/${app.jobId}`}>
-                    <ExternalLink className="h-3.5 w-3.5 mr-1" />
-                    View Job
-                  </Link>
-                </Button>
+                {jobId && (
+  <Button
+    variant="ghost"
+    size="sm"
+    className="text-xs h-7 px-2"
+    asChild
+  >
+    <Link to={`/jobs/${jobId}`}>
+      <ExternalLink className="h-3.5 w-3.5 mr-1" />
+      View Job
+    </Link>
+  </Button>
+)}
                 {canWithdraw && (
                   <Button
                     variant="ghost"
