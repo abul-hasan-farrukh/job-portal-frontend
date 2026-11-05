@@ -69,8 +69,17 @@ export default function Hero() {
                 <div key={item} className="flex shrink-0 items-center">
                   <span className="mx-5">
                     <strong>Backend Status:</strong>{" "}
-                    Due to some issues in my Oracle Cloud Account, backend is
-                    not working. I am trying to fix it.
+                    I have hosted all the microservices on a FREE Server, so
+                    functionalities may only work when the relevant service is
+                    UP. Please check the status of all the services{" "}
+                    <a
+                      href="https://aimbitious-service-registry.onrender.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-bold underline underline-offset-2 hover:text-amber-700"
+                    >
+                      Here
+                    </a>
                   </span>
 
                   <span className="mx-5 text-amber-500">•</span>
