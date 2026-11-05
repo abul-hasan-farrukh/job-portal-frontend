@@ -164,7 +164,7 @@ export default function Applications() {
           <AlertDialogHeader>
             <AlertDialogTitle>Withdraw Application?</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you want to withdraw your application for{" "}
+              Are you sure you want to withdraw your application for this{" "}
               <span className="font-semibold">Job #{withdrawTarget?.jobId}</span>?
               This cannot be undone.
             </AlertDialogDescription>
