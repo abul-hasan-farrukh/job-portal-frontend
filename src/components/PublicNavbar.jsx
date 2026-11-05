@@ -54,7 +54,7 @@ export default function PublicNavbar() {
           </div> */}
 
                     <img
-                        src="/logo.png"
+                        src="/logo-transparent.png"
                         alt="Aimbitious Logo"
                         className="h-20 w-70 shrink-0 object-contain"
                     />
