@@ -69,9 +69,7 @@ export default function Hero() {
                 <div key={item} className="flex shrink-0 items-center">
                   <span className="mx-5">
                     <strong>Backend Status:</strong>{" "}
-                    I have hosted all the microservices on a FREE Server, so
-                    functionalities may only work when the relevant service is
-                    UP. Please check the status of all the services{" "}
+                    I have hosted all the microservices on a FREE Server. To activate all the services check Footer section. Please check the status of all the services{" "}
                     <a
                       href="https://aimbitious-service-registry.onrender.com/"
                       target="_blank"
