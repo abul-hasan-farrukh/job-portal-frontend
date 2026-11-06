@@ -122,7 +122,7 @@ export default function UserNavbar() {
             <img
               src="/logo.png"
               alt="Aimbitious"
-              className="h-9 w-80 max-w-[170px] object-contain sm:h-10"
+              className="h-9 w-auto max-w-[170px] object-contain sm:h-10"
             />
           </Link>
 
