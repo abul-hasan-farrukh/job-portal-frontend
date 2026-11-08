@@ -98,7 +98,7 @@ export default function Sidebar({
           {!collapsed && (
             <span className="min-w-0 border-l border-white/10 pl-3">
               <span className="block whitespace-nowrap text-[10px] font-semibold uppercase leading-4 tracking-[0.16em] text-slate-400">
-                Employer Dashboard
+                {/* Employer Dashboard */}
               </span>
             </span>
           )}
