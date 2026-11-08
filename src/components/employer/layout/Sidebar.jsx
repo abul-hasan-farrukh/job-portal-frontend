@@ -1,5 +1,5 @@
 ﻿import { Link, NavLink, useNavigate } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { cn } from "@/lib/utils"
 import { logout } from "@/store/user/userAuth"
 import { ScrollArea } from "@/components/ui/scroll-area"
@@ -8,17 +8,13 @@ import {
   LayoutDashboard,
   Briefcase,
   FileText,
-  Users,
   BrainCircuit,
-  MessageSquare,
   Building2,
-  CreditCard,
   Settings,
   LogOut,
   ChevronLeft,
   ChevronRight,
   PlusCircle,
-  Sparkles,
 } from "lucide-react"
 
 const navigation = [
@@ -34,27 +30,29 @@ const navigation = [
       { name: "All Jobs", href: "/employer/jobs", icon: Briefcase },
       { name: "Create Job", href: "/employer/jobs/create", icon: PlusCircle },
       { name: "Applications", href: "/employer/applications", icon: FileText },
-      
     ],
   },
   {
     title: "Tools",
     items: [
       { name: "AI Screening", href: "/employer/ai-screening", icon: BrainCircuit },
-     
     ],
   },
   {
     title: "Account",
     items: [
       { name: "Company Profile", href: "/employer/company", icon: Building2 },
-     
       { name: "Settings", href: "/employer/settings", icon: Settings },
     ],
   },
 ]
 
-export default function Sidebar({ collapsed, setCollapsed, mobileMenuOpen, setMobileMenuOpen }) {
+export default function Sidebar({
+  collapsed,
+  setCollapsed,
+  mobileMenuOpen,
+  setMobileMenuOpen,
+}) {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -64,110 +62,155 @@ export default function Sidebar({ collapsed, setCollapsed, mobileMenuOpen, setMo
   }
 
   return (
-    <div
+    <aside
       className={cn(
-        "relative flex flex-col bg-slate-950 transition-all duration-300 shrink-0",
-        collapsed ? "w-16" : "w-64",
-        // Mobile: off-canvas, Desktop: always visible
-        "fixed lg:relative inset-y-0 left-0 z-50 lg:z-auto",
+        "relative z-50 flex h-screen shrink-0 flex-col overflow-visible",
+        "border-r border-slate-800/80 bg-[#0b1220] text-slate-300",
+        "transition-[width,transform] duration-300 ease-in-out",
+        collapsed ? "w-20" : "w-64",
+        "fixed inset-y-0 left-0 lg:relative lg:z-auto",
         mobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
       )}
     >
-      {/* Brand Logo */}
-      <div className="flex h-16 items-center justify-between border-b border-white/5 px-4 shrink-0">
-        {!collapsed ? (
-          <Link to="/employer/dashboard" className="flex items-center gap-2.5 min-w-0">
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand shadow-lg shadow-brand/40">
-              <Sparkles className="h-4 w-4 text-white" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-bold text-white truncate">ZOSHIRE.AI</p>
-              <p className="text-[10px] text-slate-500 leading-tight">Employer Dashboard</p>
-            </div>
-          </Link>
-        ) : (
-          <Link to="/employer/dashboard" className="flex items-center justify-center w-full">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand shadow-lg shadow-brand/40">
-              <Sparkles className="h-4 w-4 text-white" />
-            </div>
-          </Link>
+      {/* Brand */}
+      <div
+        className={cn(
+          "flex h-[76px] shrink-0 items-center border-b border-white/[0.07]",
+          collapsed ? "justify-center px-3" : "justify-start px-5"
         )}
+      >
+        <Link
+          to="/employer/dashboard"
+          aria-label="Aimbitious employer dashboard"
+          className={cn(
+            "group flex min-w-0 items-center",
+            collapsed ? "justify-center" : "gap-3"
+          )}
+        >
+          <img
+            src="/logo.png"
+            alt="Aimbitious"
+            className={cn(
+              "shrink-0 object-contain object-left transition-all duration-300",
+              collapsed ? "h-9 w-9 object-center" : "h-10 w-[132px]"
+            )}
+          />
+          {!collapsed && (
+            <span className="min-w-0 border-l border-white/10 pl-3">
+              <span className="block whitespace-nowrap text-[10px] font-semibold uppercase leading-4 tracking-[0.16em] text-slate-400">
+                Employer Dashboard
+              </span>
+            </span>
+          )}
+        </Link>
       </div>
 
-      {/* Collapse Toggle — desktop only */}
+      {/* Desktop collapse control */}
       <Button
         variant="ghost"
         size="icon"
+        aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         onClick={() => setCollapsed(!collapsed)}
-        className="hidden lg:flex absolute -right-3 top-18 z-10 h-6 w-6 rounded-full border border-slate-700 bg-slate-900 text-slate-400 hover:bg-slate-800 hover:text-white shadow-md"
+        className="absolute -right-3 top-[88px] z-[60] hidden h-7 w-7 rounded-full border border-slate-700 bg-[#172235] text-slate-400 shadow-lg transition-all hover:border-blue-400/50 hover:bg-blue-600 hover:text-white lg:flex"
       >
         {collapsed ? (
-          <ChevronRight className="h-3 w-3" />
+          <ChevronRight className="h-3.5 w-3.5" />
         ) : (
-          <ChevronLeft className="h-3 w-3" />
+          <ChevronLeft className="h-3.5 w-3.5" />
         )}
       </Button>
 
       {/* Navigation */}
-      <ScrollArea className="flex-1">
-        <nav className={cn("py-4 space-y-5", collapsed ? "px-2" : "px-3")}>
+      <ScrollArea className="min-h-0 flex-1">
+        <nav
+          aria-label="Employer navigation"
+          className={cn(
+            "space-y-7 py-7",
+            collapsed ? "px-3" : "px-4"
+          )}
+        >
           {navigation.map((section) => (
-            <div key={section.title}>
-              {/* Section label */}
+            <section key={section.title}>
               {!collapsed ? (
-                <h3 className="mb-1.5 px-3 text-[10px] font-bold uppercase tracking-widest text-slate-600">
+                <h2 className="mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.18em] text-slate-500">
                   {section.title}
-                </h3>
+                </h2>
               ) : (
-                <div className="border-t border-white/5 mb-2" />
+                <div className="mb-3 mx-2 border-t border-white/[0.08]" />
               )}
 
-              {/* Nav items */}
-              <div className="space-y-0.5">
+              <div className="space-y-1">
                 {section.items.map((item) => {
                   const Icon = item.icon
+
                   return (
                     <NavLink
                       key={item.name}
                       to={item.href}
                       end={item.href === "/employer/jobs"}
                       title={collapsed ? item.name : undefined}
-                      onClick={() => setMobileMenuOpen && setMobileMenuOpen(false)}
+                      onClick={() =>
+                        setMobileMenuOpen && setMobileMenuOpen(false)
+                      }
                       className={({ isActive }) =>
                         cn(
-                          "flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium transition-all duration-150",
-                          collapsed ? "justify-center px-0" : "px-3",
+                          "group relative flex min-h-11 items-center rounded-xl text-[13px] font-medium",
+                          "transition-all duration-200",
+                          collapsed
+                            ? "justify-center px-0"
+                            : "gap-3 px-3.5",
                           isActive
-                            ? "bg-brand/90 text-white shadow-sm shadow-brand/30"
-                            : "text-slate-400 hover:text-white hover:bg-white/5"
+                            ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-950/40"
+                            : "text-slate-400 hover:bg-white/[0.06] hover:text-slate-100"
                         )
                       }
                     >
-                      <Icon className="h-4.5 w-4.5 shrink-0" />
-                      {!collapsed && <span>{item.name}</span>}
+                      {({ isActive }) => (
+                        <>
+                          <Icon
+                            className={cn(
+                              "h-[18px] w-[18px] shrink-0 transition-transform duration-200",
+                              !isActive && "group-hover:scale-110"
+                            )}
+                          />
+                          {!collapsed && (
+                            <span className="truncate">{item.name}</span>
+                          )}
+                          {isActive && !collapsed && (
+                            <span className="ml-auto h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                          )}
+                        </>
+                      )}
                     </NavLink>
                   )
                 })}
               </div>
-            </div>
+            </section>
           ))}
         </nav>
       </ScrollArea>
 
       {/* Logout */}
-      <div className={cn("border-t border-white/5 p-3", collapsed && "flex justify-center")}>
+      <div
+        className={cn(
+          "shrink-0 border-t border-white/[0.07] p-4",
+          collapsed && "flex justify-center px-3"
+        )}
+      >
         <button
+          type="button"
           onClick={handleLogout}
           title={collapsed ? "Logout" : undefined}
           className={cn(
-            "flex items-center gap-3 rounded-lg py-2.5 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors",
-            collapsed ? "justify-center px-2" : "px-3 w-full"
+            "group flex min-h-11 items-center rounded-xl text-[13px] font-medium",
+            "text-slate-400 transition-all duration-200 hover:bg-rose-500/10 hover:text-rose-300",
+            collapsed ? "w-11 justify-center" : "w-full gap-3 px-3.5"
           )}
         >
-          <LogOut className="h-4.5 w-4.5 shrink-0" />
+          <LogOut className="h-[18px] w-[18px] shrink-0 transition-transform duration-200 group-hover:-translate-x-0.5" />
           {!collapsed && <span>Logout</span>}
         </button>
       </div>
-    </div>
+    </aside>
   )
 }
