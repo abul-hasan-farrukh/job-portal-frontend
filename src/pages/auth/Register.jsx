@@ -32,6 +32,7 @@ import {
 import { registerUser } from "../../store/user/userThunk";
 import { resetError } from "../../store/user/userAuth";
 import { getRoleBasedRedirect } from "../../utils/roleRedirect";
+import { googleLogin } from "../../store/user/userThunk";
 
 // Brand colors:
 // Primary: #080D4D
@@ -71,6 +72,16 @@ export default function Register() {
   });
 
   const selectedRole = watch("role");
+
+  //Google Login Handler 
+  const handleGoogleSuccess = (idToken) => {
+  dispatch(
+    googleLogin({
+      idToken,
+      role: selectedRole,
+    })
+  );
+};
 
   // Preserve role-based redirection after authentication.
   useEffect(() => {
@@ -720,9 +731,12 @@ export default function Register() {
                 </div>
 
                 {/* Google Sign Up */}
-                <GoogleButton>
-                  Sign up with Google
-                </GoogleButton>
+                <GoogleButton
+  onSuccess={handleGoogleSuccess}
+  disabled={isLoading}
+>
+  Sign up with Google
+</GoogleButton>
 
                 {/* Terms and Privacy */}
                 <p className="text-center text-xs leading-6 text-slate-500">
