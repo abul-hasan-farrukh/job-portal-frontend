@@ -88,7 +88,7 @@ export default function Sidebar({
           )}
         >
           <img
-            src="/logo.png"
+            src="/logo-transparent.png"
             alt="Aimbitious"
             className={cn(
               "shrink-0 object-contain object-left transition-all duration-300",
