@@ -47,6 +47,41 @@ export const registerUser = createAsyncThunk(
   }
 );
 
+// Google Login
+export const googleLogin = createAsyncThunk(
+  "auth/googleLogin",
+  async ({ idToken, role }, { rejectWithValue }) => {
+    try {
+      const response = await api.post("/auth/google", {
+        idToken,
+        ...(role ? { role } : {}),
+      });
+
+      if (!response.data?.jwt || !response.data?.user) {
+        return rejectWithValue(
+          "Invalid authentication response from server."
+        );
+      }
+
+      localStorage.setItem("accessToken", response.data.jwt);
+
+      return response.data;
+
+    } catch (error) {
+
+      console.error(
+        "Google authentication error:",
+        error.response?.data
+      );
+
+      return rejectWithValue(
+        error.response?.data?.message ||
+        "Google authentication failed. Please try again."
+      );
+    }
+  }
+);
+
 // Fetch Current User Profile
 export const fetchCurrentUser = createAsyncThunk(
   "auth/fetchCurrentUser",
