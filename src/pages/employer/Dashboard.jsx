@@ -157,9 +157,9 @@ export default function Dashboard() {
         <section className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <div className="mb-2 flex items-center gap-2">
-              <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-blue-700">
+              {/* <span className="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-blue-700">
                 Employer workspace
-              </span>
+              </span> */}
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               Dashboard
