@@ -2,6 +2,7 @@
 import {
   loginUser,
   registerUser,
+  googleLogin,
   fetchCurrentUser,
   updateProfile,
   forgotPassword,
@@ -50,6 +51,31 @@ const authSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+
+    // Google Login
+builder
+  .addCase(googleLogin.pending, (state) => {
+    state.isLoading = true;
+    state.error = null;
+    state.authStatus = "loading";
+  })
+
+  .addCase(googleLogin.fulfilled, (state, action) => {
+    state.isLoading = false;
+    state.user = action.payload.user;
+    state.token = action.payload.jwt;
+    state.isAuthenticated = true;
+    state.authStatus = "authenticated";
+    state.error = null;
+  })
+
+  .addCase(googleLogin.rejected, (state, action) => {
+    state.isLoading = false;
+    state.error =
+      action.payload || "Google authentication failed.";
+    state.authStatus = "unauthenticated";
+  });
+
     // Login User
     builder
       .addCase(loginUser.pending, (state) => {
