@@ -1,4 +1,4 @@
-const CLOUD_NAME = "dcpesbd8q"
+const CLOUD_NAME = "u6wgqi8k"
 const UPLOAD_PRESET = "job-portal"
 
 /**
