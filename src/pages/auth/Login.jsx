@@ -25,6 +25,7 @@ import {
 import { resetError } from "../../store/user/userAuth";
 import { loginUser } from "../../store/user/userThunk";
 import { getRoleBasedRedirect } from "../../utils/roleRedirect";
+import { googleLogin } from "../../store/user/userThunk";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -48,6 +49,10 @@ export default function Login() {
       password: "",
     },
   });
+
+ const handleGoogleSuccess = (idToken) => {
+  dispatch(googleLogin({ idToken }));
+};
 
   // Redirect users who are already authenticated.
   useEffect(() => {
@@ -241,7 +246,10 @@ export default function Login() {
         </div>
 
         {/* Google sign-in */}
-        <GoogleButton />
+        <GoogleButton
+  onSuccess={handleGoogleSuccess}
+  disabled={isLoading}
+/>
 
         {/* Terms and privacy */}
         <p className="px-1 pt-2 text-center text-xs leading-6 text-slate-500">
