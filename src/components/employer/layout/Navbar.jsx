@@ -80,7 +80,7 @@ export default function Navbar({ onMenuClick }) {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
           <span className="text-[11px] font-semibold tracking-wide text-blue-700">
-            {/* EMPLOYER WORKSPACE */}
+            EMPLOYER WORKSPACE
           </span>
         </div>
 
