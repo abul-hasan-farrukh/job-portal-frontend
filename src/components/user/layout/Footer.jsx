@@ -29,7 +29,7 @@ export default function Footer() {
               className="inline-flex items-center rounded-xl transition-opacity hover:opacity-80"
             >
               <img
-                src="/logo.png"
+                src="/logo-transparent.png"
                 alt="Aimbitious"
                 className="h-10 w-auto max-w-[190px] object-contain object-left"
               />
