@@ -1,6 +1,14 @@
 ﻿import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowUpRight, Mail, Heart, X, Server, ExternalLink } from "lucide-react";
+import {
+  ArrowUpRight,
+  Mail,
+  Heart,
+  X,
+  Server,
+  ExternalLink,
+} from "lucide-react";
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
 
 const platformLinks = [
   { label: "Find Jobs", href: "/register" },
@@ -27,9 +35,22 @@ const microservices = [
 ];
 
 function FooterLink({ href, children }) {
-  const className = "inline-flex items-center gap-1 text-sm text-slate-400 transition-colors hover:text-white";
-  if (href.startsWith("/#")) return <a href={href} className={className}>{children}</a>;
-  return <Link to={href} className={className}>{children}</Link>;
+  const className =
+    "inline-flex items-center gap-1 text-sm text-slate-400 transition-colors hover:text-white";
+
+  if (href.startsWith("/#")) {
+    return (
+      <a href={href} className={className}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={href} className={className}>
+      {children}
+    </Link>
+  );
 }
 
 export default function Footer() {
@@ -37,11 +58,14 @@ export default function Footer() {
 
   useEffect(() => {
     if (!isServicesOpen) return;
+
     const onKeyDown = (event) => {
       if (event.key === "Escape") setIsServicesOpen(false);
     };
+
     document.addEventListener("keydown", onKeyDown);
     document.body.style.overflow = "hidden";
+
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = "";
@@ -53,32 +77,60 @@ export default function Footer() {
       <footer className="border-t border-white/10 bg-[#0b1768] text-white">
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-10">
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+
             {/* Brand */}
             <div>
-              <Link to="/" aria-label="Aimbitious home" className="inline-flex items-center">
+              <Link
+                to="/"
+                aria-label="Aimbitious home"
+                className="inline-flex items-center"
+              >
                 <img
                   src="/logo.png"
                   alt="Aimbitious - AI Powered Job Portal"
                   className="h-15 w-auto max-w-[220px] object-contain transition-opacity duration-200 hover:opacity-90"
                 />
               </Link>
+
               <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">
-                Bringing job seekers and employers together through a modern, organized career platform.
+                Bringing job seekers and employers together through a modern,
+                organized career platform.
               </p>
-              <a
-                href="mailto:contact@example.com"
-                className="mt-5 inline-flex items-center gap-2 text-sm text-indigo-300 transition-colors hover:text-white"
-              >
-                <Mail className="h-4 w-4" /> Contact our team
-              </a>
+
+              {/* Email and GitHub */}
+              <div className="mt-5 flex flex-wrap items-center gap-3">
+                <a
+                  href="mailto:abulhasanfarrukh@gmail.com"
+                  className="inline-flex items-center gap-2 rounded-lg border border-indigo-300/20 bg-white/5 px-3 py-2 text-sm text-indigo-300 transition-all duration-200 hover:border-indigo-300/50 hover:bg-white/10 hover:text-white"
+                  aria-label="Send an email to Abul Hasan Farrukh"
+                >
+                  <Mail className="h-4 w-4" />
+                  Email Me
+                </a>
+
+                <a
+                  href="https://github.com/abul-hasan-farrukh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg border border-indigo-300/20 bg-white/5 px-3 py-2 text-sm text-indigo-300 transition-all duration-200 hover:border-indigo-300/50 hover:bg-white/10 hover:text-white"
+                  aria-label="Visit my GitHub profile"
+                >
+                  <GitHubLogoIcon className="h-[18px] w-[18px]" />
+                  GitHub
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
             </div>
 
             {/* Platform */}
             <div>
               <h3 className="font-bold text-white">Platform</h3>
+
               <div className="mt-5 flex flex-col items-start gap-4">
                 {platformLinks.map((link) => (
-                  <FooterLink key={link.label} href={link.href}>{link.label}</FooterLink>
+                  <FooterLink key={link.label} href={link.href}>
+                    {link.label}
+                  </FooterLink>
                 ))}
               </div>
             </div>
@@ -86,9 +138,12 @@ export default function Footer() {
             {/* Company */}
             <div>
               <h3 className="font-bold text-white">Company</h3>
+
               <div className="mt-5 flex flex-col items-start gap-4">
                 {companyLinks.map((link) => (
-                  <FooterLink key={link.label} href={link.href}>{link.label}</FooterLink>
+                  <FooterLink key={link.label} href={link.href}>
+                    {link.label}
+                  </FooterLink>
                 ))}
               </div>
             </div>
@@ -104,6 +159,7 @@ export default function Footer() {
                 Activate Services
                 <ArrowUpRight className="h-4 w-4" />
               </button>
+
               <p className="mt-3 max-w-[230px] text-xs leading-5 text-slate-400">
                 Open the service health links to wake up the backend services.
               </p>
@@ -115,21 +171,32 @@ export default function Footer() {
             <p className="text-xs text-slate-500">
               © {new Date().getFullYear()} Aimbitious. All rights reserved.
             </p>
+
             <p className="flex items-center gap-1.5 text-xs text-slate-500">
-              Built with <Heart className="h-3.5 w-3.5 fill-rose-500 text-rose-500" /> by Abul Hasan Farrukh.
+              Built with
+              <Heart className="h-3.5 w-3.5 fill-rose-500 text-rose-500" />
+              by Abul Hasan Farrukh.
             </p>
-            <a href="#top" className="inline-flex items-center gap-1 text-xs font-medium text-slate-400 transition-colors hover:text-white">
-              Back to top <ArrowUpRight className="h-3.5 w-3.5" />
+
+            <a
+              href="#top"
+              className="inline-flex items-center gap-1 text-xs font-medium text-slate-400 transition-colors hover:text-white"
+            >
+              Back to top
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
       </footer>
 
+      {/* Activate Services Modal */}
       {isServicesOpen && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 p-3 backdrop-blur-sm sm:p-6"
           onMouseDown={(event) => {
-            if (event.target === event.currentTarget) setIsServicesOpen(false);
+            if (event.target === event.currentTarget) {
+              setIsServicesOpen(false);
+            }
           }}
         >
           <section
@@ -141,15 +208,23 @@ export default function Footer() {
             <div className="flex items-start justify-between gap-4 bg-[#080D4D] px-6 py-5 text-white sm:px-7">
               <div>
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-200">
-                  <Server className="h-4 w-4" /> Backend services
+                  <Server className="h-4 w-4" />
+                  Backend services
                 </span>
-                <h2 id="services-modal-title" className="mt-2 text-xl font-extrabold sm:text-2xl">
+
+                <h2
+                  id="services-modal-title"
+                  className="mt-2 text-xl font-extrabold sm:text-2xl"
+                >
                   Activate Aimbitious Microservices
                 </h2>
+
                 <p className="mt-1 text-sm text-indigo-100">
-                  Open each health endpoint in a new tab to activate the corresponding service.
+                  Open each health endpoint in a new tab to activate the
+                  corresponding service.
                 </p>
               </div>
+
               <button
                 type="button"
                 onClick={() => setIsServicesOpen(false)}
@@ -162,8 +237,10 @@ export default function Footer() {
 
             <div className="overflow-y-auto px-6 py-5 sm:px-7">
               <div className="mb-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-5 text-amber-900 sm:text-sm">
-                <strong>Notice:</strong> Please activate all the services together. Each may take up to 5 minutes to wake up.
+                <strong>Notice:</strong> Please activate all the services
+                together. Each may take up to 5 minutes to wake up.
               </div>
+
               <div className="grid gap-2 sm:grid-cols-2">
                 {microservices.map(([name, url], index) => (
                   <a
@@ -177,8 +254,10 @@ export default function Footer() {
                       <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-xs font-bold text-indigo-700 group-hover:bg-white">
                         {index + 1}
                       </span>
+
                       <span className="truncate">{name}</span>
                     </span>
+
                     <ExternalLink className="h-4 w-4 shrink-0 text-slate-400 group-hover:text-indigo-600" />
                   </a>
                 ))}
@@ -186,7 +265,10 @@ export default function Footer() {
             </div>
 
             <div className="flex shrink-0 items-center justify-between gap-3 border-t border-slate-100 bg-slate-50 px-6 py-4 sm:px-7">
-              <p className="text-xs text-slate-500">Each link opens in a separate browser tab.</p>
+              <p className="text-xs text-slate-500">
+                Each link opens in a separate browser tab.
+              </p>
+
               <button
                 type="button"
                 onClick={() => setIsServicesOpen(false)}
