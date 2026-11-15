@@ -131,7 +131,7 @@ export default function PublicNavbar() {
     { icon: SlidersHorizontal, label: "AI Job Recommendation" },
     { icon: DashboardIcon, label: "Role Based Dashboards" },
     { icon: Database, label: "PostgreSQL & Redis" },
-    { icon: Server, label: "11 Microservices" },
+    { icon: Server, label: "8 Microservices" },
   ];
 
   // Automatically discover all project screenshots
