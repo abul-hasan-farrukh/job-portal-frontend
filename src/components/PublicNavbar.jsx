@@ -201,7 +201,7 @@ export default function PublicNavbar() {
       {/* ================= NAVBAR ================= */}
 
       <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
-        <div className="mx-auto flex h-[76px] w-full max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto flex h-19 w-full max-w-[1600px] items-center justify-between px-4 sm:px-6 lg:px-10">
 
           <Link
             to="/"
