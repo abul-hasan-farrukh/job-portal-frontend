@@ -212,7 +212,7 @@ export default function PublicNavbar() {
             <img
               src="/logo-transparent.png"
               alt="Aimbitious Logo"
-              className="h-16 w-auto max-w-[220px] shrink-0 object-contain sm:max-w-[260px]"
+              className="h-16 w-auto max-w-55 shrink-0 object-contain sm:max-w-[260px]"
             />
           </Link>
 
