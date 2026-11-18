@@ -212,7 +212,7 @@ export default function PublicNavbar() {
             <img
               src="/logo-transparent.png"
               alt="Aimbitious Logo"
-              className="h-16 w-auto max-w-55 shrink-0 object-contain sm:max-w-[260px]"
+              className="h-16 w-auto max-w-55 shrink-0 object-contain sm:max-w-65"
             />
           </Link>
 
@@ -331,7 +331,7 @@ export default function PublicNavbar() {
 
       {isFeaturesOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/65 p-3 backdrop-blur-sm sm:p-6"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-slate-950/65 p-3 backdrop-blur-sm sm:p-6"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) {
               setIsFeaturesOpen(false);
