@@ -222,7 +222,7 @@ export default function UserNavbar() {
 
   return (
 
-    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 shadow-sm shadow-slate-900/[0.03] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 shadow-sm shadow-slate-900/3 backdrop-blur-xl">
 
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
 
