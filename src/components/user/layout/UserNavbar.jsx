@@ -224,9 +224,9 @@ export default function UserNavbar() {
 
     <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 shadow-sm shadow-slate-900/3 backdrop-blur-xl">
 
-      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-360 px-4 sm:px-6 lg:px-8">
 
-        <div className="flex min-h-[76px] items-center justify-between gap-4">
+        <div className="flex min-h-19 items-center justify-between gap-4">
 
           {/* Brand */}
 
@@ -246,7 +246,7 @@ export default function UserNavbar() {
 
               alt="Aimbitious"
 
-              className="h-9 w-auto max-w-[170px] object-contain sm:h-10"
+              className="h-9 w-auto max-w-42.5 object-contain sm:h-10"
 
             />
 
