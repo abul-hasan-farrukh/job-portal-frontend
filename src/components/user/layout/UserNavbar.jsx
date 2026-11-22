@@ -260,13 +260,13 @@ export default function UserNavbar() {
 
             onSubmit={handleSearch}
 
-            className="mx-4 hidden min-w-0 max-w-[620px] flex-1 items-center rounded-xl border border-slate-200 bg-slate-50 p-1.5 shadow-inner shadow-slate-900/[0.02] transition focus-within:border-brand/50 focus-within:bg-white focus-within:ring-4 focus-within:ring-brand/10 md:flex"
+            className="mx-4 hidden min-w-0 max-w-155 flex-1 items-center rounded-xl border border-slate-200 bg-slate-50 p-1.5 shadow-inner shadow-slate-900/2 transition focus-within:border-brand/50 focus-within:bg-white focus-within:ring-4 focus-within:ring-brand/10 md:flex"
 
           >
 
             <label className="flex min-w-0 flex-[1.25] items-center gap-2 px-2.5">
 
-              <Search className="h-[18px] w-[18px] shrink-0 text-slate-400" />
+              <Search className="h-4.5 w-4.5 shrink-0 text-slate-400" />
 
               <Input
 
@@ -292,7 +292,7 @@ export default function UserNavbar() {
 
             <label className="flex min-w-0 flex-1 items-center gap-2 px-2.5">
 
-              <MapPin className="h-[18px] w-[18px] shrink-0 text-slate-400" />
+              <MapPin className="h-4.5 w-4.5 shrink-0 text-slate-400" />
 
               <Input
 
@@ -398,7 +398,7 @@ export default function UserNavbar() {
 
                   <UserAvatar size="h-9 w-9" />
 
-                  <span className="hidden max-w-[120px] truncate text-sm font-semibold text-slate-700 xl:block">
+                  <span className="hidden max-w-30 truncate text-sm font-semibold text-slate-700 xl:block">
 
                     {userName}
 
