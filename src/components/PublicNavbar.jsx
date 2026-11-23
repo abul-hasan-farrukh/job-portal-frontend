@@ -480,7 +480,7 @@ export default function PublicNavbar() {
                           key={item}
                           className="flex items-start gap-2.5 text-sm leading-6 text-slate-600"
                         >
-                          <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500" />
+                          <span className="mt-2.25 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500" />
 
                           <span>{item}</span>
                         </li>
@@ -537,7 +537,7 @@ export default function PublicNavbar() {
 
       {selectedImage && (
         <div
-          className="fixed inset-0 z-[110] flex items-center justify-center bg-slate-950/90 p-3 backdrop-blur-md sm:p-8"
+          className="fixed inset-0 z-110 flex items-center justify-center bg-slate-950/90 p-3 backdrop-blur-md sm:p-8"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) {
               setSelectedImage(null);
