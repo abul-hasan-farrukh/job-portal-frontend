@@ -87,7 +87,7 @@ export default function ProjectScreenshotCarousel({
                 src={screenshot.image}
                 alt={screenshot.title}
                 loading="lazy"
-                className="aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                className="aspect-16/10 w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
               />
 
               <div className="absolute inset-0 flex items-center justify-center bg-[#080D4D]/0 transition-all duration-300 group-hover:bg-[#080D4D]/30">
