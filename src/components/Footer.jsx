@@ -88,7 +88,7 @@ export default function Footer() {
                 <img
                   src="/logo.png"
                   alt="Aimbitious - AI Powered Job Portal"
-                  className="h-15 w-auto max-w-[220px] object-contain transition-opacity duration-200 hover:opacity-90"
+                  className="h-15 w-auto max-w-55 object-contain transition-opacity duration-200 hover:opacity-90"
                 />
               </Link>
 
@@ -115,7 +115,7 @@ export default function Footer() {
                   className="inline-flex items-center gap-2 rounded-lg border border-indigo-300/20 bg-white/5 px-3 py-2 text-sm text-indigo-300 transition-all duration-200 hover:border-indigo-300/50 hover:bg-white/10 hover:text-white"
                   aria-label="Visit my GitHub profile"
                 >
-                  <GitHubLogoIcon className="h-[18px] w-[18px]" />
+                  <GitHubLogoIcon className="h-4.5 w-4.5" />
                   GitHub
                   <ExternalLink className="h-3 w-3" />
                 </a>
@@ -160,7 +160,7 @@ export default function Footer() {
                 <ArrowUpRight className="h-4 w-4" />
               </button>
 
-              <p className="mt-3 max-w-[230px] text-xs leading-5 text-slate-400">
+              <p className="mt-3 max-w-57.5 text-xs leading-5 text-slate-400">
                 Open the service health links to wake up the backend services.
               </p>
             </div>
@@ -192,7 +192,7 @@ export default function Footer() {
       {/* Activate Services Modal */}
       {isServicesOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 p-3 backdrop-blur-sm sm:p-6"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-slate-950/70 p-3 backdrop-blur-sm sm:p-6"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) {
               setIsServicesOpen(false);
