@@ -31,7 +31,7 @@ export default function Footer() {
               <img
                 src="/logo-transparent.png"
                 alt="Aimbitious"
-                className="h-10 w-auto max-w-[190px] object-contain object-left"
+                className="h-10 w-auto max-w-47.5 object-contain object-left"
               />
             </Link>
 
@@ -48,7 +48,7 @@ export default function Footer() {
                 title="Email"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-600 hover:shadow-md"
               >
-                <Mail className="h-[18px] w-[18px]" />
+                <Mail className="h-4.5 w-4.5" />
               </a>
 
               <a
@@ -59,7 +59,7 @@ export default function Footer() {
                 title="LinkedIn"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-blue-200 hover:bg-blue-50 hover:text-[#0A66C2] hover:shadow-md"
               >
-                <LinkedInLogoIcon className="h-[18px] w-[18px]" />
+                <LinkedInLogoIcon className="h-4.5 w-4.5" />
               </a>
 
               <a
@@ -70,7 +70,7 @@ export default function Footer() {
                 title="GitHub"
                 className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900 hover:shadow-md"
               >
-                <GitHubLogoIcon className="h-[18px] w-[18px]" />
+                <GitHubLogoIcon className="h-4.5 w-4.5" />
               </a>
             </div>
 
