@@ -44,7 +44,7 @@ export default function Navbar({ onMenuClick }) {
   const initials = getInitials(user?.fullName)
 
   return (
-    <header className="sticky top-0 z-40 flex h-[72px] shrink-0 items-center gap-3 border-b border-slate-200/80 bg-white/90 px-3 shadow-[0_2px_12px_rgba(15,23,42,0.03)] backdrop-blur-xl sm:px-5 lg:px-7">
+    <header className="sticky top-0 z-40 flex h-18 shrink-0 items-center gap-3 border-b border-slate-200/80 bg-white/90 px-3 shadow-[0_2px_12px_rgba(15,23,42,0.03)] backdrop-blur-xl sm:px-5 lg:px-7">
       {/* Mobile menu */}
       <Button
         variant="ghost"
@@ -57,9 +57,9 @@ export default function Navbar({ onMenuClick }) {
       </Button>
 
       {/* Search */}
-      <div className="hidden w-full max-w-[440px] md:block">
+      <div className="hidden w-full max-w-110 md:block">
         <div className="group relative">
-          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-[17px] w-[17px] -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-600" />
+          <Search className="pointer-events-none absolute left-3.5 top-1/2 h-4.25 w-4.25 -translate-y-1/2 text-slate-400 transition-colors group-focus-within:text-blue-600" />
           <Input
             type="search"
             placeholder="Search jobs, candidates, applications..."
@@ -100,13 +100,13 @@ export default function Navbar({ onMenuClick }) {
                     alt={user?.fullName || "Employer"}
                   />
                 )}
-                <AvatarFallback className="bg-gradient-to-br from-blue-600 to-indigo-600 text-xs font-bold text-white">
+                <AvatarFallback className="bg-linear-to-br from-blue-600 to-indigo-600 text-xs font-bold text-white">
                   {initials}
                 </AvatarFallback>
               </Avatar>
 
               <div className="hidden min-w-0 text-left sm:block">
-                <p className="max-w-[150px] truncate text-[13px] font-semibold leading-5 text-slate-800">
+                <p className="max-w-37.5 truncate text-[13px] font-semibold leading-5 text-slate-800">
                   {user?.fullName || "Employer"}
                 </p>
                 <p className="text-[11px] leading-4 text-slate-500">
@@ -121,7 +121,7 @@ export default function Navbar({ onMenuClick }) {
           <DropdownMenuContent
             align="end"
             sideOffset={10}
-            className="w-[260px] rounded-2xl border-slate-200 p-2 shadow-xl shadow-slate-900/10"
+            className="w-65 rounded-2xl border-slate-200 p-2 shadow-xl shadow-slate-900/10"
           >
             <DropdownMenuLabel className="px-3 py-3">
               <div className="flex items-center gap-3">
@@ -132,7 +132,7 @@ export default function Navbar({ onMenuClick }) {
                       alt={user?.fullName || "Employer"}
                     />
                   )}
-                  <AvatarFallback className="bg-gradient-to-br from-blue-600 to-indigo-600 text-xs font-bold text-white">
+                  <AvatarFallback className="bg-linear-to-br from-blue-600 to-indigo-600 text-xs font-bold text-white">
                     {initials}
                   </AvatarFallback>
                 </Avatar>
