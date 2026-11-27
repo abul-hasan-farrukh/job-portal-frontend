@@ -102,7 +102,7 @@ export default function Login() {
                 Authentication failed
               </p>
 
-              <p className="mt-1 break-words text-sm leading-relaxed text-red-700">
+              <p className="mt-1 wrap-break-word text-sm leading-relaxed text-red-700">
                 {error}
               </p>
             </div>
@@ -215,7 +215,7 @@ export default function Login() {
           disabled={isLoading}
           className="group relative h-12 w-full overflow-hidden rounded-xl bg-[#080D4D] text-sm font-semibold text-white shadow-lg shadow-[#080D4D]/15 transition-all duration-300 hover:bg-[#101968] hover:shadow-xl hover:shadow-[#080D4D]/20 disabled:cursor-not-allowed disabled:opacity-70"
         >
-          <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+          <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
 
           <span className="relative flex items-center justify-center">
             {isLoading ? (
