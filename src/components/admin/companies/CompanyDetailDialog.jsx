@@ -46,7 +46,7 @@ function InfoRow({ icon: Icon, label, value, href }) {
             <ExternalLink className="h-3 w-3" />
           </a>
         ) : (
-          <p className="text-sm font-medium text-slate-900 mt-0.5 break-words">{value}</p>
+          <p className="text-sm font-medium text-slate-900 mt-0.5 wrap-break-word">{value}</p>
         )}
       </div>
     </div>
@@ -96,7 +96,7 @@ export default function CompanyDetailDialog({ company, open, onClose, isActionLo
               "h-28 w-full rounded-t-xl",
               company.coverImageUrl
                 ? "bg-cover bg-center"
-                : "bg-gradient-to-r from-slate-800 to-slate-900"
+                : "bg-linear-to-r from-slate-800 to-slate-900"
             )}
             style={
               company.coverImageUrl
@@ -114,7 +114,7 @@ export default function CompanyDetailDialog({ company, open, onClose, isActionLo
                 className="h-16 w-16 rounded-xl object-cover border-4 border-white shadow-md"
               />
             ) : (
-              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white border-4 border-white shadow-md bg-gradient-to-br from-slate-100 to-slate-200">
+              <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-white border-4 border-white shadow-md bg-linear-to-br from-slate-100 to-slate-200">
                 <Building2 className="h-8 w-8 text-slate-400" />
               </div>
             )}
