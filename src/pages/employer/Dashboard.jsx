@@ -196,10 +196,10 @@ export default function Dashboard() {
 
         {/* AI insights */}
         <Card className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm">
-          <div className="h-1 w-full bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500" />
+          <div className="h-1 w-full bg-linear-to-r from-blue-600 via-indigo-500 to-violet-500" />
           <CardHeader className="flex flex-col gap-3 space-y-0 pb-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-600/20">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-600/20">
                 <Sparkles className="h-5 w-5" />
               </div>
               <div>
@@ -310,7 +310,7 @@ export default function Dashboard() {
                     <div
                       className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-colors ${actionStyles[action.tone]}`}
                     >
-                      <Icon className="h-[18px] w-[18px]" />
+                      <Icon className="h-4.5 w-4.5" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-sm font-semibold text-slate-800 transition-colors group-hover:text-blue-700">
